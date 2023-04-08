@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-{% block title %}{{ post.location }}. {{ post.date }}{% endblock %}
+{% block blogicum %}{{ post.location }}. {{ post.date }}{% endblock %}
 {% block content %}
-  <div>
     <article>
       <ul>
         <li>Место: {{ post.location }}</li>
@@ -10,7 +9,6 @@
           "{% url 'blog:category_posts' post.id %}">{{ post.category }}</a>
         </li>
       </ul>         
-      <p>{{ post.text }}</p>          
+      <p>{{ post.text|linebreaks   }}</p>          
     </article>                
-  </div>
   {% endblock %}
